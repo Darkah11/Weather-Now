@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <main className=" px-4">
         <h1 className=" text-center text-6xl py-5 font-bold leading-[1.2]">
-          How's the sky looking today?
+          How&apos;s the sky looking today?
         </h1>
         <section className=" py-10">
           <Search />
