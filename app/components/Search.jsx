@@ -4,7 +4,7 @@ import search from "@/public/icon-search.svg";
 
 export default function Search() {
   return (
-    <div className=" flex flex-col gap-y-3">
+    <div className=" flex flex-col md:flex-row md:gap-x-4 gap-y-3 max-w-[420px] mx-auto md:max-w-none lg:max-w-[656px] lg:mx-auto">
       <div className=" w-full relative">
         <Image
           className=" w-5 h-5 absolute top-0 bottom-0 my-auto left-4"
@@ -18,8 +18,8 @@ export default function Search() {
           placeholder="Search for a place..."
         />
       </div>
-      <div className=" w-full">
-        <button type="submit" className=" text-lg h-[56px] rounded-lg bg-blue-50 w-full">Search</button>
+      <div className=" w-full md:w-fit">
+        <button type="submit" className=" text-lg h-[56px] rounded-lg px-3 bg-blue-50 w-full">Search</button>
       </div>
     </div>
   );

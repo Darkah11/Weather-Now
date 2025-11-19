@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className=" px-4">
+      <main className=" px-4 md:px-6 xl:px-28">
         <h1 className=" text-center text-6xl py-5 font-bold leading-[1.2]">
           How&apos;s the sky looking today?
         </h1>
