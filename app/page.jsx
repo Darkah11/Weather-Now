@@ -2,8 +2,17 @@ import Image from "next/image";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import Weather from "./components/Weather";
+import { dailyForecast, fetchWeather, geocodeCity, hourlyForecast } from "./lib/weather";
 
-export default function Home() {
+export default async function Home() {
+  const {name, latitude, longitude, country} = await geocodeCity('Akungba')
+  const weatherData = await fetchWeather(52.52, 13.41)
+  const hourlyData = await hourlyForecast(52.52, 13.41)
+  const dailyData = await dailyForecast(52.52, 13.41)
+  console.log(name, latitude, longitude, country);
+  console.log(weatherData, hourlyData, dailyData);
+  
+  
   return (
     <>
       <Header />
