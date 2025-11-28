@@ -97,7 +97,7 @@ export default function Weather({
           <div className=" flex flex-col md:flex-row md:justify-between justify-center items-center absolute top-0 bottom-0 left-0 right-0 m-auto md:px-8">
             <div className=" text-center">
               <p className=" text-[28px] font-bold">
-                {location}, {country}
+                {/* {location}, {country} */}
               </p>
               <p className=" text-lg font-medium text-neutral-20">{date}</p>
             </div>

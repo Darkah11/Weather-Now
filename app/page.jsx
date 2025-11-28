@@ -15,9 +15,9 @@ export default async function Home({ searchParams }) {
   const lon = searchParams.lon ?? -75.8449946;
   // const { name, latitude, longitude, country } = await geocodeCity("Ber");
   // const { city, country } = await geocodeCityX(lat, lon);
-  // const weatherData = await fetchWeather(lat, lon, unit);
-  // const hourlyData = await hourlyForecast(lat, lon, unit);
-  // const dailyData = await dailyForecast(lat, lon, unit);
+  const weatherData = await fetchWeather(lat, lon, unit);
+  const hourlyData = await hourlyForecast(lat, lon, unit);
+  const dailyData = await dailyForecast(lat, lon, unit);
   // console.log(hourlyData);
 
   return (
@@ -30,13 +30,13 @@ export default async function Home({ searchParams }) {
         <section className=" py-10">
           <Search />
           <div className=" mt-10">
-              {/* <Weather
+              <Weather
                 weatherData={weatherData}
                 dailyData={dailyData}
-                location={city}
-                country={country}
+                // location={city}
+                // country={country}
                 hourlyData={hourlyData}
-              /> */}
+              />
           </div>
         </section>
       </main>
