@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 
 export async function GET(req) {
   try {
-    const { searchParams } = new URL(req.url);
-    const q = searchParams.get("q");
-
+    // const { searchParams } = new URL(req.url);
+    // const q = searchParams.get("q");
+    const q = req.nextUrl.searchParams.get("q");
     // If q is missing, return empty array
     // if (!q) {
     //   return NextResponse.json([], { status: 200 });

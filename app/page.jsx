@@ -5,7 +5,6 @@ import Weather from "./components/Weather";
 import {
   dailyForecast,
   fetchWeather,
-  geocodeCity,
   geocodeCityX,
   hourlyForecast,
 } from "./lib/weather";

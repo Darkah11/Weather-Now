@@ -21,7 +21,7 @@ export default function Search() {
     const data = await res.json();
     setResults(data);
     setLoading(false);
-    console.log(data);
+    // console.log(data);
   }
   const handleSelect = (place) => {
     const params = new URLSearchParams(searchParams);
