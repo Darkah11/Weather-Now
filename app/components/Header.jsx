@@ -19,7 +19,7 @@ export default function Header() {
 
     const next = current === "metric" ? "imperial" : "metric";
 
-    params.set("unit", next); // update unit, keep everything else
+    params.set("unit", next); 
 
     router.push(`/?${params.toString()}`);
   };

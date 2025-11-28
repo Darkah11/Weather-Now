@@ -1,22 +1,23 @@
-export async function geocodeCity(city) {
-  const res = await fetch(
-    `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`, {
-    next: { revalidate: 0 },
-  }
-  );
-  const data = await res.json();
+// export async function geocodeCity(city) {
+//   const res = await fetch(
+//     `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`, {
+//     next: { revalidate: 0 },
+//   }
+//   );
+//   const data = await res.json();
 
-  if (!data.results || data.results.length === 0) {
-    throw new Error("City not found");
-  }
+//   if (!data.results || data.results.length === 0) {
+//     throw new Error("City not found");
+//   }
 
-  return {
-    name: data.results[0].name,
-    latitude: data.results[0].latitude,
-    longitude: data.results[0].longitude,
-    country: data.results[0].country
-  };
-}
+//   return {
+//     name: data.results[0].name,
+//     latitude: data.results[0].latitude,
+//     longitude: data.results[0].longitude,
+//     country: data.results[0].country
+//   };
+// }
+
 export async function geocodeCityX(lat, lon) {
   const res = await fetch(
     `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}

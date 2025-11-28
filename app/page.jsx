@@ -8,7 +8,6 @@ import {
   geocodeCityX,
   hourlyForecast,
 } from "./lib/weather";
-// import { Suspense } from "react";
 
 export default async function Home({ searchParams }) {
   const unit = searchParams.unit ?? "metric";

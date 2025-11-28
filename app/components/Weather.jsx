@@ -29,7 +29,6 @@ export default function Weather({
     const days = new Set(times.map((t) => t.split("T")[0]));
     return Array.from(days);
   }, [times]);
-  // console.log(allDays);
 
   const [selectedDay, setSelectedDay] = useState(allDays[0]);
 
@@ -45,16 +44,6 @@ export default function Weather({
 
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState("");
-  // const [activeDay, setActiveDay] = useState("");
-  // const days = [
-  //   "monday",
-  //   "tuesday",
-  //   "wednesday",
-  //   "thursday",
-  //   "friday",
-  //   "saturday",
-  //   "sunday",
-  // ];
 
   function formatTo12Hour(isoTime) {
     const hour = parseInt(isoTime.slice(11, 13), 10);
