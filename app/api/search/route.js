@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
+import { isDynamicServerError } from 'next/dist/client/components/hooks-server-context';
 
 export async function GET(req) {
+  const q = req.nextUrl.searchParams.get("q");
   try {
     // const { searchParams } = new URL(req.url);
     // const q = searchParams.get("q");
-    const q = req.nextUrl.searchParams.get("q");
+
     // If q is missing, return empty array
     // if (!q) {
     //   return NextResponse.json([], { status: 200 });
@@ -38,6 +40,9 @@ export async function GET(req) {
 
     return NextResponse.json(results, { status: 200 });
   } catch (err) {
+     if (isDynamicServerError(err)) {
+        throw err;
+    }
     console.error("Geocoding API Error:", err);
 
     return NextResponse.json(
