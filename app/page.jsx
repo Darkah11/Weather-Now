@@ -30,13 +30,13 @@ export default async function Home({ searchParams }) {
         <section className=" py-10">
           <Search />
           <div className=" mt-10">
-              <Weather
+              {/* <Weather
                 weatherData={weatherData}
                 dailyData={dailyData}
                 location={city}
                 country={country}
                 hourlyData={hourlyData}
-              />
+              /> */}
           </div>
         </section>
       </main>
