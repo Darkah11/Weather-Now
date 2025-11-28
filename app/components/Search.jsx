@@ -11,18 +11,18 @@ export default function Search() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // async function handleSearch() {
-  //   // const value = e.target.value;
-  //   // setQuery(value);
+  async function handleSearch() {
+    // const value = e.target.value;
+    // setQuery(value);
 
-  //   // if (value.length < 2) return;
-  //   setLoading(true);
-  //   const res = await fetch(`/api/search?q=${query}`);
-  //   const data = await res.json();
-  //   setResults(data);
-  //   setLoading(false);
-  //   // console.log(data);
-  // }
+    // if (value.length < 2) return;
+    setLoading(true);
+    const res = await fetch(`/api/search?q=${query}`);
+    const data = await res.json();
+    setResults(data);
+    setLoading(false);
+    // console.log(data);
+  }
   const handleSelect = (place) => {
     const params = new URLSearchParams(searchParams);
     params.set("lat", place.lat);
@@ -71,7 +71,7 @@ export default function Search() {
       </div>
       <div className=" w-full md:w-fit">
         <button
-          // onClick={handleSearch}
+          onClick={handleSearch}
           type="submit"
           className=" text-lg h-[56px] rounded-lg px-3 bg-blue-50 w-full"
         >
