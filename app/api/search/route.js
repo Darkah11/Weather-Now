@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { isDynamicServerError } from 'next/dist/client/components/hooks-server-context';
 
+
+export const dynamic = 'force-dynamic';
+
 export async function GET(req) {
   const q = req.nextUrl.searchParams.get("q");
   try {
