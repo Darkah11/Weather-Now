@@ -41,7 +41,7 @@ export default function Weather({
         code: code[i],
       }))
       .filter((entry) => entry.time.startsWith(selectedDay));
-  }, [selectedDay, times, temps]);
+  }, [selectedDay, times, temps, code]);
 
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState("");
