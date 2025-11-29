@@ -13,14 +13,12 @@ export default async function Home({ searchParams }) {
   const unit = await searchParams.unit ?? "metric";
   const lat = await searchParams.lat ?? 43.1561681;
   const lon = await searchParams.lon ?? -75.8449946;
-  console.log(typeof lat);
   
   // const { name, latitude, longitude, country } = await geocodeCity("Ber");
-  const { city, country } = await geocodeCityX(lat, lon);
+  const { city, country } = await geocodeCityX(Number(lat), Number(lon));
   const weatherData = await fetchWeather(lat, lon, unit);
   const hourlyData = await hourlyForecast(lat, lon, unit);
   const dailyData = await dailyForecast(lat, lon, unit);
-  // console.log(hourlyData);
 
   return (
     <>

@@ -41,9 +41,9 @@
 
 export async function geocodeCityX(lat, lon) {
   // Ensure we have valid inputs before proceeding (optional but good practice)
-  // if (typeof lat !== 'number' || typeof lon !== 'number') {
-  //   throw new Error("Invalid latitude or longitude provided.");
-  // }
+  if (typeof lat !== 'number' || typeof lon !== 'number') {
+    throw new Error("Invalid latitude or longitude provided.");
+  }
 
   const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
 
@@ -64,7 +64,7 @@ export async function geocodeCityX(lat, lon) {
     }
 
     const data = await res.json();
-    console.log("Geocoding Data Received:", data);
+    // console.log("Geocoding Data Received:", data);
 
     // Validate the expected data structure from Nominatim
     if (!data || !data.address) {
