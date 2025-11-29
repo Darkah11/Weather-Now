@@ -52,7 +52,7 @@ export async function geocodeCityX(lat, lon) {
       next: { revalidate: 0 },
       // Good practice to add User-Agent to respect Nominatim usage policy
       headers: {
-        "User-Agent": "YourAppName/1.0 (harrisegue9@gmail.com)", 
+        "User-Agent": "weather-app/1.0 (harrisegue9@gmail.com)", 
       },
     });
 
